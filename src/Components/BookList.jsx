@@ -7,13 +7,25 @@ class BookList extends Component {
     searchValue: "",
   };
   filterBookList = () => {
-    return this.props.arrBooks.filter((book) => {
-      return book.title === this.state.searchValue;
-    });
+    return this.props.arrBooks
+      .filter((book) => {
+        return book.title.toLowerCase().includes(this.state.searchValue);
+      })
+      .map((book) => book);
   };
 
   render() {
-    console.log(this.filterBookList()[0]);
+    console.log(
+      this.props.arrBooks.map((book) => {
+        return book.title.toLowerCase().includes("cleopatra");
+      })
+    );
+    console.log(
+      this.props.arrBooks.filter((book) => {
+        return book.title.toLowerCase().includes("lessons");
+      })
+    );
+
     return (
       <Container>
         <h2>Cerca</h2>
@@ -33,6 +45,7 @@ class BookList extends Component {
         <h2 className="mb-4">Sfoglia</h2>
         <Row>
           {this.props.arrBooks.map((book) => {
+            // console.log(book);
             return this.state.searchValue ? SingleBook(this.filterBookList) : SingleBook(book);
           })}
         </Row>
