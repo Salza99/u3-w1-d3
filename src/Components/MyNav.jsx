@@ -2,6 +2,9 @@ import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 
 class MyNav extends React.Component {
+  state = {
+    searchValue: "",
+  };
   render() {
     return (
       <Navbar bg="light" data-bs-theme="light">
@@ -14,7 +17,7 @@ class MyNav extends React.Component {
           </Nav>
           <div className="input-group justify-content-end">
             <div className="form-outline">
-              <input id="search-focus" type="search" className="form-control" />
+              <input id="search-focus" type="search" className="form-control" value={this.state.searchValue} />
             </div>
             <button type="button" className="btn btn-primary">
               Find
