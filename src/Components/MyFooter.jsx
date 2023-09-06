@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const MyFooter = () => {
   return (
-    <Container>
+    <Container className="mt-5">
       <Row className="align-items-center">
         <Col xs={12} sm={4} className="mb-3">
           <img

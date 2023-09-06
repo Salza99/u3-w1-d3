@@ -1,7 +1,6 @@
 import { Button, Card, Col, Row } from "react-bootstrap";
 
 const SingleBook = (props) => {
-  console.log(props);
   return (
     <Col xs={12} sm={6} md={4} lg={3} xl={2} className="g-4" key={props.asin}>
       <Card className="h-100">

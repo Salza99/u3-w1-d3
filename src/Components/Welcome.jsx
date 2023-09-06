@@ -8,7 +8,6 @@ const Welcome = () => {
           voluptate, vel nam rerum odit nobis eveniet eos officiis explicabo natus. A quam nobis officiis.
         </p>
       </div>
-      <h2 className="mb-4">Sfoglia</h2>
     </>
   );
 };
