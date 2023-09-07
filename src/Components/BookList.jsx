@@ -11,7 +11,7 @@ class BookList extends Component {
       .filter((book) => {
         return book.title.toLowerCase().includes(this.state.searchValue);
       })
-      .map((book) => book);
+      .map((book) => SingleBook(book));
   };
 
   render() {
@@ -44,10 +44,7 @@ class BookList extends Component {
         </div>
         <h2 className="mb-4">Sfoglia</h2>
         <Row>
-          {this.props.arrBooks.map((book) => {
-            // console.log(book);
-            return this.state.searchValue ? SingleBook(this.filterBookList) : SingleBook(book);
-          })}
+          {this.state.searchValue ? this.filterBookList() : this.props.arrBooks.map((book) => SingleBook(book))}
         </Row>
       </Container>
     );
